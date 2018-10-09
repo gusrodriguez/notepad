@@ -1,0 +1,7 @@
+@import "../../../styles/variables";
+
+.delete-icon {
+    &:hover {
+        cursor: pointer
+    };
+}
