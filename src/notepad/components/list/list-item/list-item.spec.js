@@ -9,6 +9,7 @@ function setup() {
   const props = {
     id: 123,
     text: 'hello',
+    validations: [],
     deleteNote: jest.fn(),
   };
 
