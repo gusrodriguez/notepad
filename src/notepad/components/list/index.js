@@ -11,7 +11,7 @@ function List(props) {
 
   if (rows.length === 0) {
     rows = [
-      <ListItem key='default' text="No notes yet..." />,
+      <ListItem key="default" text="No notes yet..." />,
     ];
   }
 
