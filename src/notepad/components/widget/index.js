@@ -1,6 +1,8 @@
 import React from 'react';
 import Transition from 'react-transition-group/Transition';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
 import TweenMax from 'gsap/umd/TweenMax';
+import WidgetListItem from '../widget-list-item';
 import styles from './styles.scss';
 
 class Widget extends React.Component {
@@ -40,24 +42,9 @@ class Widget extends React.Component {
     this.animationCallback = done;
   }
   render() {
-
     let rows = this.props.notes.map((note, index) => (
-      <div className="list__row" key={`note_row_${note.id}`}>
-        <div className="list__column">
-          <span className="widget__note">{note.text}</span>
-        </div>
-      </div>
+      <WidgetListItem key={`note_row_${note.id}`} note={note} />
     ));
-
-    if (rows.length === 0) {
-      rows = [
-        <div className="list__row" key="default">
-          <div className="list__column">
-            <span className="widget__note" >No notes yet</span>
-          </div>
-        </div>,
-      ];
-    }
     return (
       <Transition
         in={this.props.visible}
@@ -73,7 +60,9 @@ class Widget extends React.Component {
               <h2>New note</h2>
             </header>
             <section className="widget__list">
-              {rows}
+              <TransitionGroup appear={true}>
+                {rows}
+              </TransitionGroup>
             </section>
             <footer>
               <form onSubmit={this.submit} className="widget__form">

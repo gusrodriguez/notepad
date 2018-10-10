@@ -20,7 +20,6 @@ function Notepad(props) {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.notes);
   return { 
     widgetVisible: state.widgetVisible,
     notes: state.notes,
