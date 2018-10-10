@@ -23,18 +23,18 @@ class Widget extends React.Component {
     if (!this.props.visible) return null;
 
     let rows = this.props.notes.map((note, index) => (
-      <div className="list__row">
+      <div className="list__row" key={`note_row_${note.id}`}>
         <div className="list__column">
-          <span key={`note_row_${index}`} className="widget__note">{note.text}</span>
+          <span className="widget__note">{note.text}</span>
         </div>
       </div>
     ));
 
     if (rows.length === 0) {
       rows = [
-        <div className="list__row">
+        <div className="list__row" key="default">
           <div className="list__column">
-            <span className="widget__note">No notes yet</span>
+            <span className="widget__note" >No notes yet</span>
           </div>
         </div>,
       ];

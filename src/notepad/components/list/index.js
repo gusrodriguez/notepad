@@ -1,16 +1,17 @@
 import React from 'react';
 import ListItem from '../list-item';
+import TransitionGroup from 'react-transition-group/TransitionGroup';
 import styles from './styles.scss';
 
 function List(props) {
   let rows = props.notes.map((note, index) => (
     // eslint-disable-next-line
-    <ListItem key={`note_row_${index}`} id={note.id} text={note.text} deleteNote={props.deleteNote} />
+    <ListItem key={`note_row_${note.id}`} id={note.id} text={note.text} deleteNote={props.deleteNote} />
   ));
 
   if (rows.length === 0) {
     rows = [
-      <ListItem  text="No notes yet..." />,
+      <ListItem key='default' text="No notes yet..." />,
     ];
   }
 
@@ -20,7 +21,9 @@ function List(props) {
       <div className="list__row">
         <hr />
       </div>
-      {rows}
+      <TransitionGroup appear={true}>
+       {rows}
+      </TransitionGroup>
     </section >
   );
 }
