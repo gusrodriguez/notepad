@@ -1,2 +1,1 @@
-# Record union notepad
 # notepad
