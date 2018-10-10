@@ -1,6 +1,7 @@
 import React from 'react';
 import Transition from 'react-transition-group/Transition';
 import TweenMax from 'gsap/umd/TweenMax';
+import PropTypes from 'prop-types';
 import styles from './styles.scss';
 
 class LaunchIcon extends React.Component {
@@ -36,8 +37,8 @@ class LaunchIcon extends React.Component {
         onEnter={this.handleOnEnter}
         onExit={this.handleOnExit}
         addEndListener={this.registerAnimationCallback}
-        appear={true}
-        unmountOnExit={true}
+        appear
+        unmountOnExit
       >
         <aside className='launch-icon' onClick={this.handleClick}>
           <svg width="80px" height="80px" xmlns='http://www.w3.org/2000/svg' viewBox='17 176.375 48 60'>
@@ -49,5 +50,10 @@ class LaunchIcon extends React.Component {
     );
   }
 }
+
+LaunchIcon.propTypes = {
+  visible: PropTypes.number.isRequired,
+  displayWidget: PropTypes.func.isRequired,
+};
 
 export default LaunchIcon;

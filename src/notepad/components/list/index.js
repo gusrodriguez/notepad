@@ -1,10 +1,11 @@
 import React from 'react';
-import ListItem from './list-item';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
+import PropTypes from 'prop-types';
+import ListItem from './list-item';
 import styles from './styles.scss';
 
 function List(props) {
-  let rows = props.notes.map((note, index) => (
+  let rows = props.notes.map(note => (
     // eslint-disable-next-line
     <ListItem
       key={`note_row_${note.id}`}
@@ -27,11 +28,16 @@ function List(props) {
       <div className="list__row">
         <hr />
       </div>
-      <TransitionGroup appear={true}>
+      <TransitionGroup appear>
         {rows}
       </TransitionGroup>
     </section >
   );
 }
+
+List.propTypes = {
+  notes: PropTypes.array.isRequired,
+  deleteNote: PropTypes.func.isRequired,
+};
 
 export default List;

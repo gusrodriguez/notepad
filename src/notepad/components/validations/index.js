@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.scss';
 
 function Validations(props) {
@@ -12,5 +13,14 @@ function Validations(props) {
     </ul>
   );
 }
+
+Validations.propTypes = {
+  validations: PropTypes.array.isRequired,
+  small: PropTypes.bool,
+};
+
+Validations.defaultProps = {
+  small: false,
+};
 
 export default Validations;

@@ -1,9 +1,10 @@
 import React from 'react';
 import Transition from 'react-transition-group/Transition';
 import TweenMax from 'gsap/umd/TweenMax';
-import styles from './styles.scss';
+import PropTypes from 'prop-types';
 import Validations from '../../validations';
 import DeleteIcon from '../../delete-icon';
+import styles from './styles.scss';
 
 class WidgetListItem extends React.Component {
   constructor(props) {
@@ -36,8 +37,8 @@ class WidgetListItem extends React.Component {
         onEnter={this.handleOnEnter}
         onExit={this.handleOnExit}
         addEndListener={this.registerAnimationCallback}
-        appear={true}
-        unmountOnExit={false}
+        appear
+        unmountOnExit
       >
         <div className="list__row">
           <div className="list__column widget-list-item--left">
@@ -52,5 +53,11 @@ class WidgetListItem extends React.Component {
     );
   }
 }
+
+WidgetListItem.propTypes = {
+  note: PropTypes.array.isRequired,
+  deleteNote: PropTypes.func.isRequired,
+  in: PropTypes.bool.isRequired,
+};
 
 export default WidgetListItem;

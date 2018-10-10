@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.scss';
 
 class DeleteIcon extends React.Component {
@@ -29,5 +30,15 @@ class DeleteIcon extends React.Component {
     );
   }
 }
+
+DeleteIcon.propTypes = {
+  id: PropTypes.number.isRequired,
+  deleteNote: PropTypes.func.isRequired,
+  small: PropTypes.bool,
+};
+
+DeleteIcon.defaultProps = {
+  small: false,
+};
 
 export default DeleteIcon;

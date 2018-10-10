@@ -2,6 +2,7 @@ import React from 'react';
 import Transition from 'react-transition-group/Transition';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import TweenMax from 'gsap/umd/TweenMax';
+import PropTypes from 'prop-types';
 import WidgetListItem from './widget-list-item';
 import styles from './styles.scss';
 
@@ -45,7 +46,7 @@ class Widget extends React.Component {
     this.animationCallback = done;
   }
   render() {
-    let rows = this.props.notes.map((note, index) => (
+    const rows = this.props.notes.map(note => (
       <WidgetListItem key={`note_row_${note.id}`} note={note} deleteNote={this.props.deleteNote} />
     ));
     return (
@@ -54,7 +55,7 @@ class Widget extends React.Component {
         onEnter={this.handleOnEnter}
         onExit={this.handleOnExit}
         addEndListener={this.registerAnimationCallback}
-        appear={true}
+        appear
         unmountOnExit={false}
       >
         <aside className="widget">
@@ -87,5 +88,11 @@ class Widget extends React.Component {
     );
   }
 }
+
+Widget.propTypes = {
+  addNote: PropTypes.func.isRequired,
+  notes: PropTypes.array.isRequired,
+  visible: PropTypes.bool.isRequired,
+};
 
 export default Widget;
