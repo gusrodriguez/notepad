@@ -15,16 +15,16 @@
     &.empty {
       padding: 10px 0;
     }
+    height: auto;
   }
   &__column--left {
-    flex-basis: 50%;
+    flex-basis: 90%;
     flex-direction: column;
     text-align: left;
     overflow-wrap: break-word;
-    width: 100%;
   }
   &__column--right {
-    flex-basis: 50%;
+    flex-basis: 10%;
     flex-direction: column;
       text-align: right;
       padding-top: 14px;
