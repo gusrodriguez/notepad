@@ -46,7 +46,7 @@ class Widget extends React.Component {
   }
   render() {
     let rows = this.props.notes.map((note, index) => (
-      <WidgetListItem key={`note_row_${note.id}`} note={note} />
+      <WidgetListItem key={`note_row_${note.id}`} note={note} deleteNote={this.props.deleteNote} />
     ));
     return (
       <Transition

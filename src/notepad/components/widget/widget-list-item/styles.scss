@@ -1,4 +1,10 @@
 .widget-list-item {
   overflow-wrap: break-word;
-  width: 180px;
+  &--left {
+    width: 80%;
+    overflow-wrap: break-word;
+  }
+  &--right {
+    width: 20%;
+  }
 }

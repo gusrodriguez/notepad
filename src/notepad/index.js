@@ -12,7 +12,7 @@ function Notepad(props) {
   return (
     <section className="notepad">
       <List notes={props.notes} deleteNote={deleteNote} />
-      <Widget addNote={addNote} visible={props.widgetVisible} notes={props.notes}/>
+      <Widget addNote={addNote} visible={props.widgetVisible} notes={props.notes} deleteNote={deleteNote}/>
       <LaunchIcon displayWidget={displayWidget} visible={!props.widgetVisible} />
       <CloseIcon closeWidget={closeWidget} visible={props.widgetVisible} />
     </section>

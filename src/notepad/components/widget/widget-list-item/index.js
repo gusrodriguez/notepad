@@ -3,6 +3,7 @@ import Transition from 'react-transition-group/Transition';
 import TweenMax from 'gsap/umd/TweenMax';
 import styles from './styles.scss';
 import Validations from '../../validations';
+import DeleteIcon from '../../delete-icon';
 
 class WidgetListItem extends React.Component {
   constructor(props) {
@@ -26,8 +27,9 @@ class WidgetListItem extends React.Component {
     this.animationCallback = done;
   }
   render() {
-    const { note } = this.props;
+    const { note, deleteNote } = this.props;
     const validations = note.validations.length > 0 ? <Validations validations={note.validations} small /> : null;
+    const deleteIcon = note.id ? <DeleteIcon id={note.id} deleteNote={deleteNote} small/> : null;
     return (
       <Transition
         in={this.props.in}
@@ -38,9 +40,12 @@ class WidgetListItem extends React.Component {
         unmountOnExit={false}
       >
         <div className="list__row">
-          <div className="list__column widget-list-item">
+          <div className="list__column widget-list-item--left">
             <span className="widget__note">{note.text}</span>
             {validations}
+          </div>
+          <div className="list__column widget-list-item--right">
+            {deleteIcon}
           </div>
         </div>
       </Transition>

@@ -4,4 +4,8 @@
     &:hover {
         cursor: pointer
     };
+    &--small {
+      display: block;
+      margin: 0 auto;
+    }
 }
