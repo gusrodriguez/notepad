@@ -12,13 +12,14 @@ class ListItem extends Component {
   }
   handleOnEnter(node) {
     TweenMax.from(node, 0.3, {
+      height: 0,
       alpha: 0,
       delay: 2,
       onComplete: this.animationCallback,
     });
   }
   handleOnExit(node) {
-    TweenMax.to(node, 0.3, { display: 'none', alpha: 0 });
+    TweenMax.to(node, 0.3, { display: 'none', alpha: 0});
   }
   registerAnimationCallback(node, done) {
     this.animationCallback = done;

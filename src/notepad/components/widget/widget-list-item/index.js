@@ -18,7 +18,7 @@ class WidgetListItem extends React.Component {
     });
   }
   handleOnExit(node) {
-    TweenMax.to(node, 0.3, { display: 'none', alpha: 0, height: 'auto' });
+    TweenMax.to(node, 0.3, { display: 'none', alpha: 0 });
   }
   registerAnimationCallback(node, done) {
     this.animationCallback = done;
