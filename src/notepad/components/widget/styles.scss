@@ -4,6 +4,7 @@
   position: fixed;
   bottom: $separator;
   right: $separator;
+  transform: scale(0);
   &__modal {
     position: absolute;
     right: 0;
