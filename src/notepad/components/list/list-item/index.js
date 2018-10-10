@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Transition from 'react-transition-group/Transition';
 import TweenMax from "gsap/umd/TweenMax";
 import DeleteIcon from '../../delete-icon';
+import Validations from '../../validations';
 
 class ListItem extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class ListItem extends Component {
     const deleteIcon = props.id ? <DeleteIcon id={props.id} deleteNote={props.deleteNote}/> : null;
     const columnClassName = props.id ? 'list__column--left' : 'list__column--empty';
     const rowClassName = props.id ? 'list__row' : 'list__row empty';
+    const validations = props.validations.length > 0 ? <Validations validations={props.validations} /> : null;
     return (
       <Transition
         onEnter={this.handleOnEnter}
@@ -41,6 +43,7 @@ class ListItem extends Component {
         <div className={rowClassName}>
           <div className={columnClassName}>
             {props.text}
+            {validations}
           </div>
           <div className="list__column--right">
             {deleteIcon}

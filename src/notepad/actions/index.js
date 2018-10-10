@@ -7,11 +7,19 @@ import {
 
 const maxNotes = 9999;
 
+const validate = (text) => {
+  const validations = [];
+  if ((/^\s*$/).test(text)) { 
+    validations.push('Error: Note is empty');
+  }
+  return validations;
+};
+
 const displayWidget = () => {
   return {
     type: DISPLAY_WIDGET,
     payload: true,
-  }
+  };
 };
 
 const closeWidget = () => {
@@ -27,6 +35,7 @@ const addNote = (text) => {
     payload: {
       id: Math.floor(Math.random() * maxNotes),
       text,
+      validations: validate(text),
     },
   };
 };
