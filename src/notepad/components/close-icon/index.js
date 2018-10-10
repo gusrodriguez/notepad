@@ -11,29 +11,24 @@ class CloseIcon extends Component {
     this.handleOnExit = this.handleOnExit.bind(this);
     this.registerAnimationCallback = this.registerAnimationCallback.bind(this);
   }
-
   handleClick() {
     this.props.closeWidget();
   }
-
   handleOnEnter(node) {
     TweenMax.to(node, 0.3, {
       scale: 1,
       onComplete: this.animationCallback,
     })
   }
-
   handleOnExit(node) {
     TweenMax.to(node, 0.3, {
       scale: 0,
       onComplete: this.animationCallback,
     })
   }
-
   registerAnimationCallback(node, done) {
     this.animationCallback = done;
   }
-
   render() {
     return (
       <Transition

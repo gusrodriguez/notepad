@@ -10,7 +10,6 @@ class ListItem extends Component {
     this.handleOnExit = this.handleOnExit.bind(this);
     this.registerAnimationCallback = this.registerAnimationCallback.bind(this);
   }
-
   handleOnEnter(node) {
     TweenMax.from(node, 0.3, {
       alpha: 0,
@@ -18,15 +17,12 @@ class ListItem extends Component {
       onComplete: this.animationCallback,
     });
   }
-
   handleOnExit(node) {
     TweenMax.to(node, 0.3, { display: 'none', alpha: 0 });
   }
-
   registerAnimationCallback(node, done) {
     this.animationCallback = done;
   }
-
   render() {
     const { props } = this;
     const deleteIcon = props.id ? <DeleteIcon id={props.id} deleteNote={props.deleteNote}/> : null;
