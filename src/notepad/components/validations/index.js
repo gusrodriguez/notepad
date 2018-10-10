@@ -6,7 +6,7 @@ function Validations(props) {
     <li className="validations">{validation}</li>,
   );
   return (
-    <ul>
+    <ul className="validations__list">
       {validations}
     </ul>
   );

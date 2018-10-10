@@ -1,6 +1,7 @@
 import React from 'react';
 import Transition from 'react-transition-group/Transition';
 import TweenMax from 'gsap/umd/TweenMax';
+import styles from './styles.scss';
 
 class WidgetListItem extends React.Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class WidgetListItem extends React.Component {
         unmountOnExit={false}
       >
         <div className="list__row">
-          <div className="list__column">
+          <div className="list__column widget-list-item">
             <span className="widget__note">{note.text}</span>
           </div>
         </div>

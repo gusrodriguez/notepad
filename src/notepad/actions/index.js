@@ -10,7 +10,10 @@ const maxNotes = 9999;
 const validate = (text) => {
   const validations = [];
   if ((/^\s*$/).test(text)) { 
-    validations.push('Error: Note is empty');
+    validations.push('Error: The note is empty.');
+  }
+  if (text.length > 100) {
+    validations.push('Error: The Note exceeds 100 characters.');
   }
   return validations;
 };
