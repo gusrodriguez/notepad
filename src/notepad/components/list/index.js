@@ -1,5 +1,5 @@
 import React from 'react';
-import ListItem from '../list-item';
+import ListItem from './list-item';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import styles from './styles.scss';
 

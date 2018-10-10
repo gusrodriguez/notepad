@@ -1,5 +1,5 @@
 // // app styles
-import './styles/main.scss';
+import './variables.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

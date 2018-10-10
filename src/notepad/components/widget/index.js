@@ -2,7 +2,7 @@ import React from 'react';
 import Transition from 'react-transition-group/Transition';
 import TransitionGroup from 'react-transition-group/TransitionGroup';
 import TweenMax from 'gsap/umd/TweenMax';
-import WidgetListItem from '../widget-list-item';
+import WidgetListItem from './widget-list-item';
 import styles from './styles.scss';
 
 class Widget extends React.Component {

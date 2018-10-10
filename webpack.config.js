@@ -43,7 +43,7 @@ const config = {
       'process.env.NODE_ENV': JSON.stringify('development'),
     }),
     // Copy the assets in the image folder into the build folder to be served as static
-    new CopyWebpackPlugin([{ from: `${APP_DIR}/src/images` }]),
+    new CopyWebpackPlugin([{ from: `${APP_DIR}/src/header/recordunion-logo.svg` }]),
   ],
   watchOptions: {
     poll: true,

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Transition from 'react-transition-group/Transition';
 import TweenMax from "gsap/umd/TweenMax";
-import DeleteIcon from '../delete-icon';
+import DeleteIcon from '../../delete-icon';
 
 class ListItem extends Component {
   constructor(props) {
