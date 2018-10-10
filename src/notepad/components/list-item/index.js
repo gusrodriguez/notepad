@@ -20,10 +20,7 @@ class ListItem extends Component {
   }
 
   handleOnExit(node) {
-    TweenMax.to(node, 0.3, {
-      alpha: 0,
-      onComplete: this.animationCallback
-    })
+    TweenMax.to(node, 0.3, { display: 'none', alpha: 0 });
   }
 
   registerAnimationCallback(node, done) {
