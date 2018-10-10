@@ -7,7 +7,7 @@
     "test": "jest --config jest.config.js --coverage",
     "test:watch": "npm test -- --watch",
     "start-dev": "nodemon ./server.js",
-    "build": "webpack --env.development --config webpack.config.js",
+    "build": "webpack --config webpack.config.js",
     "watch": "webpack --watch --config webpack.config.js",
     "lint": "eslint ."
   },

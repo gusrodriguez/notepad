@@ -40,10 +40,20 @@ const config = {
       minimize: true,
     }),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     // Copy the assets in the image folder into the build folder to be served as static
     new CopyWebpackPlugin([{ from: `${APP_DIR}/src/header/recordunion-logo.svg` }]),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false,
+      },
+      output: {
+        comments: false,
+      },
+      screwIe8: true,
+      sourceMap: true,
+    }),
   ],
   watchOptions: {
     poll: true,
@@ -51,14 +61,3 @@ const config = {
 };
 
 module.exports = config;
-
-// new webpack.optimize.UglifyJsPlugin({
-//   compress: {
-//     warnings: false,
-//   },
-//   output: {
-//     comments: false,
-//   },
-//   screwIe8: true,
-//   sourceMap: true,
-// }),

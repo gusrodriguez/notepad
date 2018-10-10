@@ -14,3 +14,4 @@ server.get('/*', (req, res) => {
 
 // start the server
 server.listen(config.port);
+console.log("Application listening on port: ", config.port);
