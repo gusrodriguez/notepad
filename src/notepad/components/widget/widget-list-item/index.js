@@ -2,6 +2,7 @@ import React from 'react';
 import Transition from 'react-transition-group/Transition';
 import TweenMax from 'gsap/umd/TweenMax';
 import styles from './styles.scss';
+import Validations from '../../validations';
 
 class WidgetListItem extends React.Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class WidgetListItem extends React.Component {
   }
   render() {
     const { note } = this.props;
+    const validations = note.validations.length > 0 ? <Validations validations={note.validations} small /> : null;
     return (
       <Transition
         in={this.props.in}
@@ -38,6 +40,7 @@ class WidgetListItem extends React.Component {
         <div className="list__row">
           <div className="list__column widget-list-item">
             <span className="widget__note">{note.text}</span>
+            {validations}
           </div>
         </div>
       </Transition>

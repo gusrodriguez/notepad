@@ -12,6 +12,9 @@ const validate = (text) => {
   if ((/^\s*$/).test(text)) { 
     validations.push('Error: The note is empty.');
   }
+  if ((/([\uE000-\uF8FF]|\uD83C[\uDC00-\uDFFF]|\uD83D[\uDC00-\uDFFF]|[\u2694-\u2697]|\uD83E[\uDD10-\uDD5D])/g).test(text)) {
+    validations.push('Error: The note contains emojis.');
+  }
   if (text.length > 100) {
     validations.push('Error: The Note exceeds 100 characters.');
   }
