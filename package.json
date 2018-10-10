@@ -4,7 +4,7 @@
   "description": "A notepad with redux",
   "main": "index.js",
   "scripts": {
-    "test": "jest --config jest.config.js --watch",
+    "test": "jest --config jest.config.js",
     "test:watch": "npm test -- --watch",
     "start-dev": "nodemon ./server.js",
     "build": "webpack --env.development --config webpack.config.js",
