@@ -24,6 +24,9 @@ class Widget extends React.Component {
   }
   submit(e) {
     e.preventDefault();
+    this.setState({
+      inputValue: '',
+    });
     this.props.addNote(this.state.inputValue);
   }
   handleOnEnter(node, firstTime) {
