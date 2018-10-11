@@ -1,23 +1,16 @@
 # notepad
 
-## Installation
-Install dependencies.
+## Install dependencies
 ```
     npm install
 ```
 
 ## Run the application
-1. Build the application
 ```
-    npm run build
-```
-
-2. Start the development server
-```
-    npm run start-dev
+    npm run start
 ```
 
-3. Navigate to:
+## Navigate to:
 ```
     localhost:8080
 ```
