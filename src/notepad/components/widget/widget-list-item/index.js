@@ -37,13 +37,11 @@ class WidgetListItem extends React.Component {
     const deleteIcon = note.id ? <DeleteIcon id={note.id} deleteNote={deleteNote} small/> : null;
     return (
       <Transition
-        in={this.props.in}
+        {...this.props}
         onEnter={this.handleOnEnter}
         onExit={this.handleOnExit}
         addEndListener={this.registerAnimationCallback}
-        appear
-        unmountOnExit={false}
-        {...this.props}
+        unmountOnExit={true}  
       >
         <div className="list__row">
           <div className="list__column widget-list-item--left">
@@ -60,9 +58,8 @@ class WidgetListItem extends React.Component {
 }
 
 WidgetListItem.propTypes = {
-  note: PropTypes.array.isRequired,
+  note: PropTypes.object.isRequired,
   deleteNote: PropTypes.func.isRequired,
-  in: PropTypes.bool.isRequired,
 };
 
 export default WidgetListItem;

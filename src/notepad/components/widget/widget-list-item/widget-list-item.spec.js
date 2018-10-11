@@ -8,6 +8,8 @@ Enzyme.configure({ adapter: new Adapter() });
 function setup() {
   const props = {
     note: {
+      id: '123',
+      text: 'hello',
       validations: [],
     },
     deleteNote: jest.fn(),

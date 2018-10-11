@@ -52,7 +52,7 @@ class LaunchIcon extends React.Component {
 }
 
 LaunchIcon.propTypes = {
-  visible: PropTypes.number.isRequired,
+  visible: PropTypes.bool.isRequired,
   displayWidget: PropTypes.func.isRequired,
 };
 

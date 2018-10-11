@@ -32,7 +32,6 @@ class DeleteIcon extends React.Component {
 }
 
 DeleteIcon.propTypes = {
-  id: PropTypes.number.isRequired,
   deleteNote: PropTypes.func.isRequired,
   small: PropTypes.bool,
 };

@@ -38,13 +38,11 @@ class ListItem extends Component {
     const validations = props.validations.length > 0 ? <Validations validations={props.validations} /> : null;
     return (
       <Transition
+        {...this.props}
         onEnter={this.handleOnEnter}
         onExit={this.handleOnExit}
         addEndListener={this.registerAnimationCallback}
-        in={props.in}
-        onExited={props.onExited}
-        unmountOnExit={false}
-        {...this.props}
+        unmountOnExit={true}
       >
         <div className={rowClassName}>
           <div className={columnClassName}>
