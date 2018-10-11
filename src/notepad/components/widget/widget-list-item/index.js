@@ -22,7 +22,11 @@ class WidgetListItem extends React.Component {
     });
   }
   handleOnExit(node) {
-    TweenMax.to(node, 0.3, { display: 'none', alpha: 0 });
+    TweenMax.to(node, 0.3, {
+      display: 'none',
+      alpha: 0,
+      onComplete: this.registerAnimationCallback,
+    });
   }
   registerAnimationCallback(node, done) {
     this.animationCallback = done;
@@ -38,7 +42,8 @@ class WidgetListItem extends React.Component {
         onExit={this.handleOnExit}
         addEndListener={this.registerAnimationCallback}
         appear
-        unmountOnExit
+        unmountOnExit={false}
+        {...this.props}
       >
         <div className="list__row">
           <div className="list__column widget-list-item--left">

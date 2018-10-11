@@ -20,7 +20,12 @@ class ListItem extends Component {
     });
   }
   handleOnExit(node) {
-    TweenMax.to(node, 0.3, { display: 'none', alpha: 0, height: 'auto' });
+    TweenMax.to(node, 0.3, {
+      display: 'none',
+      alpha: 0,
+      height: 'auto',
+      onComplete: this.animationCallback,
+    });
   }
   registerAnimationCallback(node, done) {
     this.animationCallback = done;
@@ -39,6 +44,7 @@ class ListItem extends Component {
         in={props.in}
         onExited={props.onExited}
         unmountOnExit={false}
+        {...this.props}
       >
         <div className={rowClassName}>
           <div className={columnClassName}>
