@@ -7,3 +7,15 @@
   cursor: pointer;
   transform: scale(0);
 }
+
+@media only screen and (max-width: 600px) {
+  .launch-icon {
+    margin-top: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    cursor: pointer;
+    transform: scale(0);
+  }
+}
