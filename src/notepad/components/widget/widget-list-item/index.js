@@ -41,7 +41,7 @@ class WidgetListItem extends React.Component {
         onEnter={this.handleOnEnter}
         onExit={this.handleOnExit}
         addEndListener={this.registerAnimationCallback}
-        unmountOnExit={true}  
+        unmountOnExit={false}  
       >
         <div className="list__row">
           <div className="list__column widget-list-item--left">

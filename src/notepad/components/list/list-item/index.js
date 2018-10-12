@@ -42,7 +42,7 @@ class ListItem extends Component {
         onEnter={this.handleOnEnter}
         onExit={this.handleOnExit}
         addEndListener={this.registerAnimationCallback}
-        unmountOnExit={true}
+        unmountOnExit={false}
       >
         <div className={rowClassName}>
           <div className={columnClassName}>
