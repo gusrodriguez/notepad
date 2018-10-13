@@ -7,7 +7,7 @@
 
 ## Run the application
 ```
-    npm run start
+    npm start
 ```
 
 ## Navigate to:
