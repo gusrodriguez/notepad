@@ -6,6 +6,16 @@
   right: -4px;
   cursor: pointer;
   transform: scale(0);
+  .background {
+    display: block;
+    position: absolute;
+    height: 38px;
+    width: 42px;
+    background: white;
+    z-index: -1;
+    bottom: 38px;
+    right: 20px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -16,6 +26,15 @@
     right: 0;
     cursor: pointer;
     transform: scale(0);
-    background: white;
+    .background {
+      display: block;
+      position: absolute;
+      height: 38px;
+      width: 42px;
+      background: white;
+      z-index: -1;
+      bottom: 40px;
+      right: 20px;
+    }
   }
 }
