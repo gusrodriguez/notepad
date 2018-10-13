@@ -11,7 +11,7 @@
 @media only screen and (max-width: 600px) {
   .close-icon {
     position: absolute;
-    margin-top: 10px;
+    margin: $separator 10px 0 0;
     top: 0;
     right: 0;
     bottom: auto;
